@@ -1,0 +1,35 @@
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+
+    .characters {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .character-info {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .characters img {
+      width: 200px;
+      height: 300px;
+    }
+    .character-details {
+        text-align: left;
+      }
+
+      .character-details p:not(:first-child) {
+        display: none;
+      }
+  }

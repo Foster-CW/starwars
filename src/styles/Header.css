@@ -1,0 +1,52 @@
+header {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+
+header h2 {
+    animation-name: fadeout;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fed34f !important;
+    position: fixed;
+    top: 10px;
+    opacity: 60%;
+    transform: perspective(300px) rotateX(25deg);
+}
+
+header p {
+    font-size: 2rem;  
+}   
+
+@media (max-width: 600px) {
+    header p {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: 2rem;
+        text-align: left;
+        margin-left: 1rem;
+    }
+
+    header img {
+        width: 300px;
+        height: 200px;
+    }
+  }
+
+@keyframes fadeout {
+    0% {
+        transform: rotateX(35deg) translateY(80%);
+    }
+
+    100% {
+        transform: rotateX(35deg) perspective(300px) rotateX(25deg) translateY(-150%);
+
+    }
+}

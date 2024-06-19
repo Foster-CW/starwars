@@ -38,6 +38,12 @@ header p {
         width: 300px;
         height: 200px;
     }
+
+    header h2 {
+        font-size: 3rem;
+        bottom: 100px;
+        position: fixed;
+    }
   }
 
 @keyframes fadeout {

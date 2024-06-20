@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
 import '../styles/CharacterList.css';
-
 import luke_skywalker from '../imgs/Luke-Skywalker.jpg';
 import darth_vader from '../imgs/DarthVader.jpg';
 import c3po from '../imgs/c3po.jpg';
@@ -16,14 +14,14 @@ import Wan_kenobi from '../imgs/obi-Wan_kenobi.jpg';
 const images = {
   'luke_skywalker': luke_skywalker,
   'darth_vader': darth_vader,
-  'c-3po' : c3po,
-  'r2-d2' : r2d2,
-  'leia_organa' : leia_organa,
-  'owen_lars' : owen_lars,
-  'beru_whitesun_lars' : beru_whitesun_lars,
-  'r5-d4' : r5d4,
-  'biggs_darklighter' : biggs_darklighter,
-  'obi-wan_kenobi' : Wan_kenobi,
+  'c-3po': c3po,
+  'r2-d2': r2d2,
+  'leia_organa': leia_organa,
+  'owen_lars': owen_lars,
+  'beru_whitesun_lars': beru_whitesun_lars,
+  'r5-d4': r5d4,
+  'biggs_darklighter': biggs_darklighter,
+  'obi-wan_kenobi': Wan_kenobi,
 };
 
 const CharacterItem = ({ character }) => {
@@ -35,7 +33,6 @@ const CharacterItem = ({ character }) => {
       .then(response => response.json())
       .then(data => setHomeworld(data.name));
 
-  
     const characterName = character.name.toLowerCase().replace(/ /g, '_');
     setImageUrl(images[characterName]);
   }, [character.homeworld, character.name]);
@@ -48,15 +45,14 @@ const CharacterItem = ({ character }) => {
         <div style={{ width: 200, height: 300, backgroundColor: '#ccc' }}>Image not found</div>
       )}
       <div className="character-details">
-      <h2>{character.name}</h2>
-      <h3>{homeworld}</h3>
-      <p>Height: {character.height} cm</p>
-      <p>Mass: {character.mass} kg</p>  
-      <p>Gender: {character.gender}</p>
+        <h2>{character.name}</h2>
+        <h3>{homeworld}</h3>
+        <p>Height: {character.height} cm</p>
+        <p>Mass: {character.mass} kg</p>
+        <p>Gender: {character.gender}</p>
       </div>
     </div>
   );
 };
 
 export default CharacterItem;
-

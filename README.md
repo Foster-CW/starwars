@@ -1,70 +1,112 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Visão Geral
 
-## Available Scripts
+Este aplicativo é uma aplicação React que consome a API SWAPI (Star Wars API) para exibir uma lista de personagens de Star Wars. O usuário pode filtrar personagens com base em seu planeta de origem e carregar mais personagens conforme necessário.
 
-In the project directory, you can run:
+## Estrutura do Projeto
 
-### `npm start`
+O projeto é dividido nos seguintes componentes principais:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   **App**: O componente principal que gerencia o estado e coordena a renderização dos outros componentes.
+-   **CharacterList**: Componente responsável por renderizar a lista de personagens.
+-   **CharacterItem**: Componente que exibe os detalhes de um único personagem.
+-   **FilterNavigation**: Componente que fornece a interface de filtro para selecionar personagens com base no planeta de origem.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configuração e Execução do Projeto
 
-### `npm test`
+### Pré-requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Node.js (v14 ou superior)
+-   npm ou yarn
 
-### `npm run build`
+### Passos para Executar o Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  **Clonar o Repositório**
+    
+    Copiar código
+    
+    `git clone https://github.com/seu-usuario/seu-repositorio.git
+    cd seu-repositorio` 
+    
+2.  **Instalar Dependências**
+    
+    Usando npm:
+    
+    Copiar código
+    
+    `npm install` 
+    
+    Ou usando yarn:
+    
+    Copiar código
+    
+    `yarn install` 
+    
+3.  **Executar o Aplicativo**
+    
+    Usando npm:
+    
+    Copiar código
+    
+    `npm start` 
+    
+    Ou usando yarn:
+    
+    Copiar código
+    
+    `yarn start` 
+    
+    O aplicativo estará disponível em `http://localhost:3000`.
+    
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Executar Testes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para executar os testes, use o comando:
 
-### `npm run eject`
+Usando npm:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Copiar código
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm test` 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ou usando yarn:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Copiar código
 
-## Learn More
+`yarn test` 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Descrição dos Componentes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### App.js
 
-### Code Splitting
+O componente principal que gerencia o estado dos personagens e planetas. Faz a requisição inicial para a API SWAPI para buscar personagens e planetas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### CharacterList.js
 
-### Analyzing the Bundle Size
+Recebe uma lista de personagens e renderiza um `CharacterItem` para cada personagem.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### CharacterItem.js
 
-### Making a Progressive Web App
+Renderiza os detalhes de um personagem específico. Faz uma requisição para buscar o nome do planeta de origem do personagem.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### FilterNavigation.js
 
-### Advanced Configuration
+Renderiza um elemento de seleção que permite ao usuário filtrar personagens com base no planeta de origem.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Detalhes da Implementação
 
-### Deployment
+### Gerenciamento de Estado
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+O estado é gerenciado no componente `App` usando o hook `useState`. Os dados são buscados da API SWAPI utilizando o hook `useEffect`.
 
-### `npm run build` fails to minify
+### Mocking da API para Testes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Os testes utilizam `jest` para mockar as respostas da API SWAPI. Isso é feito para garantir que os testes sejam consistentes e não dependam da disponibilidade da API real.
+
+## Deploy
+
+[Desafio FrontEnd](https://starwars-nine-theta.vercel.app/)
+
+## Conclusão
+
+Este documento fornece uma visão geral de como o aplicativo Star Wars foi projetado, como configurá-lo, executá-lo e testar o código. Para contribuições ou problemas, sinta-se à vontade para abrir uma issue ou enviar um pull request no repositório do GitHub.

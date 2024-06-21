@@ -10,6 +10,7 @@ import beru_whitesun_lars from '../imgs/beru_whitesun_lars.jpg';
 import r5d4 from '../imgs/r5-d4.jpg';
 import biggs_darklighter from '../imgs/biggs_darklighter.jpg';
 import Wan_kenobi from '../imgs/obi-Wan_kenobi.jpg';
+import anakin_skywalker from '../imgs/anakin_skywalker.png';
 
 const images = {
   'luke_skywalker': luke_skywalker,
@@ -22,6 +23,7 @@ const images = {
   'r5-d4': r5d4,
   'biggs_darklighter': biggs_darklighter,
   'obi-wan_kenobi': Wan_kenobi,
+  'anakin_skywalker' : anakin_skywalker,
 };
 
 const CharacterItem = ({ character }) => {
@@ -42,7 +44,7 @@ const CharacterItem = ({ character }) => {
       {imageUrl ? (
         <img src={imageUrl} alt={character.name} width="400" height="200" />
       ) : (
-        <div style={{ width: 200, height: 300, backgroundColor: '#ccc' }}>Image not found</div>
+        <img src="https://picsum.photos/400/200" alt="Placeholder" className="character-image" />
       )}
       <div className="character-details">
         <h2>{character.name}</h2>
